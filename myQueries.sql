@@ -35,7 +35,8 @@ from artists
 where artists.ArtistId = 10;
 --Selecting all instances from tracks
 select *
-from tracks --Selecting from joined (inner join) tables (Tracks and Genres) where Name = Blues
+from tracks
+--Selecting from joined (inner join) tables (Tracks and Genres) where Name = Blues
 select *
 from Genres
     join tracks on Genres.GenreId = tracks.GenreId
@@ -55,7 +56,7 @@ select *
 from playlists
     join playlist_track on playlist_track.playlistid = tracks.TrackId
 where playlists.Name = "Music";
--- Joining three tables at once (playlists and playlist_track) and then (playlists and tracks)
+--Joining three tables at once (playlists and playlist_track) and then (playlists and tracks)
 select *
 from playlists
     join playlist_track on playlist_track.playlistId = playlists.PlaylistId
@@ -64,7 +65,8 @@ where playlists.Name = "Classical";
 --selecting all the instances in genres where Name = Jazz
 select *
 from genres
-where Name = "Jazz" --Joining 4 tables at once
+where Name = "Jazz"
+ --Joining 4 tables at once
 select count (DISTINCT artists.Name)
 from genres
     join tracks on tracks.GenreId = genres.GenreId
